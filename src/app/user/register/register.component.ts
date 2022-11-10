@@ -11,8 +11,8 @@ export class RegisterComponent {
   // otherwise, FormGroup will change the type to AbstractControl
   name = new FormControl('', [Validators.required, Validators.minLength(3)]);
   // if we use the validators directly on html angular will assume those values, check email minLength
-  email = new FormControl('', [Validators.email]);
-  age = new FormControl('');
+  email = new FormControl('', [Validators.required, Validators.email]);
+  age = new FormControl('', [Validators.min(18), Validators.max(120)]);
   password = new FormControl('');
   confirm_password = new FormControl('');
   phone_number = new FormControl('');
